@@ -1,7 +1,7 @@
 #include<string>
-using namespace std;
+
 namespace phonetic{
 
-string find(string text1, string text2);
+std::string find(std::string text, std::string word);
 
 };

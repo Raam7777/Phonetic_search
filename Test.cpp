@@ -473,3 +473,18 @@ TEST_CASE("Test replacement of lower-case and upper-case") {
     CHECK(find(text, "InsIde") == string("inside"));
     CHECK(find(text, "Inside") == string("inside"));
 }
+
+TEST_CASE("Test exception") {
+	string text = "banana for breakfast";
+	CHECK_THROWS(find(text, "banan"));
+	CHECK_THROWS(find(text, "fob"));
+	CHECK_THROWS(find(text, "yaara"));
+	CHECK_THROWS(find(text, "break"));
+	text = "xxx google gallery";
+	CHECK_THROWS(find(text, "joog"));
+	CHECK_THROWS(find(text, "goo"));
+	CHECK_THROWS(find(text, "raam"));
+	text = "xxx quickly yyy";
+	CHECK_THROWS(find(text, "quic"));
+	CHECK_THROWS(find(text, "ickly"));
+}
