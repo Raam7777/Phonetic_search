@@ -487,4 +487,7 @@ TEST_CASE("Test exception") {
 	text = "xxx quickly yyy";
 	CHECK_THROWS(find(text, "quic"));
 	CHECK_THROWS(find(text, "ickly"));
+	text = "";
+    CHECK_THROWS(find(text, ""));
+
 }

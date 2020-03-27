@@ -5,9 +5,11 @@
 
 using namespace std;
 string phonetic::find(string text, string word){
-
+    if(text=="") throw std::out_of_range{"invalid text "};
     text = text + " ";
     string newWord = "";
+
+    
 
     for(auto it = text.begin(); it != text.end(); it++){
         
@@ -85,6 +87,7 @@ string phonetic::find(string text, string word){
         }
 
     }
-    if(newWord=="") throw std::out_of_range{"invalid word"};
+
+    if(newWord=="") throw std::out_of_range{"invalid word "};
     return newWord;
 }
